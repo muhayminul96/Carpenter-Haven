@@ -1,10 +1,16 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import NotFound from "./Pages/NotFound";
+import Header from "./Pages/Shared/Header";
 
 function App() {
   return (
-    <div className="App">
-      <button className="btn btn-active btn-secondary">Button</button>
+    <div className="App mx-8">
+      <Header></Header>
+      <Routes>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
+      </Routes>
     </div>
   );
 }
