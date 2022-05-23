@@ -5,6 +5,11 @@ const Header = () => {
   const navMenu = (
     <>
       <li>
+        <Link to="/">
+        Home
+        </Link>
+      </li>
+      <li>
         <a>Item 1</a>
       </li>
       <li>
@@ -41,9 +46,6 @@ const Header = () => {
         </div>
         <Link to="/home" className="btn btn-ghost normal-case text-xl">
           Carpenter Haven
-        </Link>
-        <Link className="px-5" to="/">
-          Home
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
