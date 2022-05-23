@@ -4,6 +4,8 @@ import NotFound from "./Pages/NotFound";
 import Header from "./Pages/Shared/Header";
 import Home from "./Pages/Home/Home";
 import Footer from "./Pages/Shared/Footer";
+import Signup from "./Pages/Authentication/Signup";
+import Login from "./Pages/Authentication/Login";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
