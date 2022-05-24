@@ -59,6 +59,9 @@ const Header = () => {
         <Link to="/home" className="btn btn-ghost normal-case text-xl">
           Carpenter Haven
         </Link>
+        {user?.displayName&&<Link to="/" className="btn btn-ghost normal-case text-xl">
+          Hello {user.displayName}
+        </Link>}
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{navMenu}</ul>
