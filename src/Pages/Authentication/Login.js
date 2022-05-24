@@ -1,100 +1,97 @@
 import React from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import SocialLogin from "./SocialLogin";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [
-    signInWithEmailAndPassword,
-    user,
-    loading,
-    error,
-  ] = useSignInWithEmailAndPassword(auth);
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
-  if(loading){
-      <Loading></Loading>
+  if (loading) {
+    <Loading></Loading>;
   }
 
-  if(user){
-      navigate('/home')
+  if (user) {
+    navigate(from, { replace: true });
   }
 
   const handleLogin = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    signInWithEmailAndPassword(email,password)
+    signInWithEmailAndPassword(email, password);
     console.log(email, password);
   };
 
   return (
     <div className="mb-24 w-64 lg:w-96 mx-auto  overflow-hidden">
       <form onSubmit={handleLogin}>
-        <div class="form-control w-full">
-          <label class="label">
-            <span class="label-text">Your Email</span>
+        <div className="form-control w-full">
+          <label className="label">
+            <span className="label-text">Your Email</span>
           </label>
-          <label class="input-group">
+          <label className="input-group">
             <span>Email</span>
             <input
               type="email"
               name="email"
               placeholder="info@site.com"
               required
-              class="input input-bordered w-full"
+              className="input input-bordered w-full"
             />
           </label>
         </div>
-        <div class="form-control w-full">
-          <label class="label">
-            <span class="label-text">Your Password</span>
+        <div className="form-control w-full">
+          <label className="label">
+            <span className="label-text">Your Password</span>
           </label>
-          <label class="input-group">
+          <label className="input-group">
             <span>PasW</span>
             <input
               type="password"
               name="password"
               required
               placeholder="Your Password"
-              class="input input-bordered w-full"
+              className="input input-bordered w-full"
             />
           </label>
         </div>
         {error && (
-        <>
-          <div class="alert w-96 mx-auto my-2 shadow-sm">
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="stroke-current flex-shrink-0 h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <span>{error.message}</span>
+          <>
+            <div className="alert w-96 mx-auto my-2 shadow-sm">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="stroke-current flex-shrink-0 h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span>{error.message}</span>
+              </div>
             </div>
-          </div>
-        </>
-      )}
-        <div class="form-control py-2 my-10">
-          <label class="input-group">
+          </>
+        )}
+        <div className="form-control py-2 my-10">
+          <label className="input-group">
             <input
               type="submit"
               value="Login"
-              class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg w-full"
+              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg w-full"
             />
           </label>
         </div>
-        
       </form>
       <div className="w-96 mx-auto mb-2">
         <p>
@@ -103,13 +100,13 @@ const Login = () => {
             onClick={() => {
               navigate("/signup");
             }}
-            class="btn btn-link"
+            className="btn btn-link"
           >
             Sign Up
           </button>{" "}
         </p>
       </div>
-      <div class="divider my-4"></div>
+      <div className="divider my-4"></div>
       <SocialLogin></SocialLogin>
     </div>
   );
