@@ -106,7 +106,7 @@ const Signup = () => {
         </div>
         {error && (
           <>
-            <div className="alert w-96 mx-auto my-2 shadow-sm">
+            <div className="alert w-full mx-auto my-2 shadow-sm">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -131,7 +131,7 @@ const Signup = () => {
             <input
               type="submit"
               value="Sign Up"
-              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg w-full"
+              className="btn btn-lg w-full"
             />
           </label>
         </div>

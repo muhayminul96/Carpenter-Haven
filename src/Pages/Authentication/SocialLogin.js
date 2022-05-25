@@ -19,7 +19,7 @@ const SocialLogin = () => {
     <div>
       {error && (
         <>
-          <div className="alert w-96 mx-auto my-2 shadow-sm">
+          <div className="alert w-full mx-auto my-2 shadow-sm">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

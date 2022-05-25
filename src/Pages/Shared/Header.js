@@ -58,7 +58,10 @@ const Header = () => {
           Carpenter Haven
         </Link>
         {user?.displayName && (
-          <Link to="/" className="btn btn-ghost normal-case text-xl">
+          <Link
+            to="/"
+            className="btn btn-ghost normal-case text-xl hidden lg:block"
+          >
             Hello {user.displayName}
           </Link>
         )}

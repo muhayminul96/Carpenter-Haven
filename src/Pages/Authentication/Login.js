@@ -63,11 +63,11 @@ const Login = () => {
         </div>
         {error && (
           <>
-            <div className="alert w-96 mx-auto my-2 shadow-sm">
+            <div className="alert w-full mx-auto my-2 shadow-sm">
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="stroke-current flex-shrink-0 h-6 w-6"
+                  className="stroke-current  flex-shrink-0 h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                 >
@@ -85,15 +85,11 @@ const Login = () => {
         )}
         <div className="form-control py-2 my-10">
           <label className="input-group">
-            <input
-              type="submit"
-              value="Login"
-              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg w-full"
-            />
+            <input type="submit" value="Login" className="btn btn-lg w-full" />
           </label>
         </div>
       </form>
-      <div className="w-96 mx-auto mb-2">
+      <div className="w-full mx-auto mb-2">
         <p>
           Are You New?
           <button
