@@ -1,0 +1,44 @@
+[
+  {
+    "id": "624c02cebec4f8c936df8a1e",
+    "title": " How will you improve the performance of a React Application?",
+    "blogText": "Using React speed optimization tools, detecting unnecessary renders in a React 16 application. Using the 'Why did you update' library, detecting superfluous component rendering. React performance optimization by removing redundant component rendering. shouldComponentUpdate is used to prevent renderings that are unneeded. PureComponent improves efficiency by removing superfluous renderings. Immutable.js prevents unnecessary renders in React. For a React-based PWA, identifying problematic bundles. Using Gzip compression to optimize the Javascript bundle. Using code splitting, we can improve the app's loading time even further.",
+    "blogUrl" : "https://dzone.com/articles/the-future-of-reactjs-developers"
+  },
+  {
+    "id": "624c02ce0a76f6fc67382eb1",
+    "title": " What are the different ways to manage a state in a React application?",
+    "blogText": "There are four main types of state you need to properly manage in your React apps: Local state: hook is most commonly used to handle local state in React. Local state is required, for example, to show or hide a modal component or to monitor values for a form component, such as form submission, when the form is disabled, and the values of the form's inputs. Global state: The data we handle across several components is referred to as global state. When we wish to receive and change data from everywhere in our app, or at least many components, we need global state. Authenticated user state is a good example of global state. It is important to obtain and alter a user's data across our program if they are signed in. Sometimes states that we believe should be local become worldwide. Server state: Data from an external server that has to be combined with our current UI state. Server state is a simple notion, but managing it alongside all of our local and global UI state may be difficult. Every time you download or change data from an external server, numerous bits of state, such as loading and error state, must be maintained. SWR and React Query, for example, make handling server state a lot easier. URL state: Data found on our URLs, such as pathnames and query parameters. The category of URL state is sometimes overlooked, yet it is an essential one. Many significant aspects of our application rely on URL state access in many circumstances Consider how difficult it would be to create a blog without the ability to retrieve a post based on its slug or id in the URL! There are definitely more state components that may be identified, but these are the most important ones to consider for most applications you develop. ",
+    "blogUrl" : "https://www.mongodb.com/nodejs-database"
+
+    
+  },
+  {
+    "id": "624c02c3cd403162ac3f8edb7",
+    "title": "How does prototypical inheritance work?.",
+    "blogText": "Prototype inheritance refers to the ability to access characteristics of one object from another. We utilize a JavaScript prototype to extend an existing object constructor with additional attributes and functions. After that, we can instruct our JS code to inherit attributes from a prototype. Through a reference pointer function, we may reuse attributes or methods from one JavaScript object to another. The idea of prototype chaining is used in prototypal inheritance. Let's dig further into that idea. Every object has a  property that links to another object or null. Consider a attribute on object C that points to object B. The  attribute of item B links to prototype object A. This process continues indefinitely, establishing a prototype chain. When we search our code, we leverage this idea. When we need to discover a property in an object, we look for it first in the object, then in the prototype, and so on. As a result, the complete prototype chain is explored until the property or null is discovered.",
+    "blogUrl" : "https://www.geeksforgeeks.org/prototypal-inheritance-using-__proto__-in-javascript/"
+
+  },
+  {
+    "id": "624c02cea403162be3f8edb7",
+    "title": "Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts.",
+    "blogText": "setProducts using because react a has some internal process. if we set product than it re load but products = [...]  is not reload automatically.",
+    "blogUrl" : "https://www.geeksforgeeks.org/prototypal-inheritance-using-__proto__-in-javascript/"
+
+  },
+  {
+    "id": "624c02cea403162ac3f8edb7",
+    "title": "You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?",
+    "blogText": "findedProducts = products.filter(product => product.name===name)",
+    "blogUrl" : "https://www.geeksforgeeks.org/prototypal-inheritance-using-__proto__-in-javascript/"
+
+  },
+  {
+    "id": "624c02cea403162ac3f8edc7",
+    "title": " What is a unit test? Why should write unit tests?",
+    "blogText": "Unit testing is a software development technique that examines the smallest testable components of an application, known as units, separately and independently for appropriate functioning. This testing approach is carried out by software developers and, on occasion, QA personnel during the development process. The primary goal of unit testing is to isolate written code and test it to see if it works as intended. The earlier an issue is recognized, the less likely it is that compound mistakes will arise. The costs of resolving an issue soon outweigh the costs of resolving it later. Debugging processes are made easier. Developers may make modifications to the code base fast. Code can also be re-used by developers by transferring it to new projects.",
+    "blogUrl" : "https://www.akana.com/blog/what-is-jwt"
+
+  }
+]

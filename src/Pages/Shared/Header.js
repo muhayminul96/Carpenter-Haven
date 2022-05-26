@@ -54,13 +54,13 @@ const Header = () => {
             {navMenu}
           </ul>
         </div>
-        <Link to="/home" className="btn btn-ghost normal-case text-xl">
+        <Link to="/home" className="btn font-extrabold btn-ghost normal-case text-2xl">
           Carpenter Haven
         </Link>
         {user?.displayName && (
           <Link
             to="/"
-            className="btn btn-ghost normal-case text-xl hidden lg:block"
+            className="btn btn-link normal-case text-xl hidden lg:block pt-2"
           >
             Hello {user.displayName}
           </Link>
