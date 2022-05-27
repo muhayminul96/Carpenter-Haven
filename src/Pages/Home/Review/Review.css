@@ -1,0 +1,31 @@
+.review-info{
+margin: 20px;
+border-radius: 10px;
+
+}
+.stars {
+    align-items: center;
+    justify-content: center;
+    display: flex ;
+    padding-left: 20px;
+
+}
+
+.reviewer-info{
+    background-color: #E02C6D;
+    color: #E4D1B9;
+    padding: 2px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border-radius: 20px;
+    
+
+}
+
+.reviewer-info img {
+    width: 50px;
+    margin: 20px ;
+}
+
