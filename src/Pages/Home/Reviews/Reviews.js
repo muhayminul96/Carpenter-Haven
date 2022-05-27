@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./Reviews.css";
 
 import Review from "../Review/Review";
+import { serverUrl } from "../../../helper";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("/reviews.json")
+    fetch(`${serverUrl}review`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

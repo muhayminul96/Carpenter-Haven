@@ -11,14 +11,14 @@ const Review = (props) => {
         <ReactStars
           count={rating}
           size={34}
-          color="#333C83"
-          activeColor="#333C83"
+          color="#898279"
+          activeColor="#898279"
         />
         <ReactStars
           count={5 - rating}
           size={34}
-          color="#F24A72"
-          activeColor="#F24A72"
+          color="#d68535"
+          activeColor="#d68535"
         />
       </div>
 
