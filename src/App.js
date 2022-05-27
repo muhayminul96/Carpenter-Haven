@@ -13,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Blogs from "./Pages/Blog/Blogs/Blogs";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import AddReview from "./Pages/Dashboard/AddReview";
+import Resume from "./Pages/Resume";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="/about" element={<Resume></Resume>}></Route>
         <Route
           path="/product/:id"
           element={
