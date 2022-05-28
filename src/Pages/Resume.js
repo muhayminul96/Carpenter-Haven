@@ -10,7 +10,7 @@ const Resume = () => {
         <p class="pt-5 text-2xl lg:text-4xl leading-relaxed">
           Syed Muhayminul Islam
         </p>
-        
+
         <p class="py-5 text-base lg:text-lg leading-relaxed">
           muhayminul96@gmail.com <br />
           +880 1935778149
@@ -59,7 +59,7 @@ const Resume = () => {
                   <td>Secondary School Certificate</td>
                   <td>Science</td>
                   <td>Jessore</td>
-                  <td>5.00 out of 5.00</td>
+                  <td>3.94 out of 5.00</td>
                   <td>2012</td>
                 </tr>
               </tbody>

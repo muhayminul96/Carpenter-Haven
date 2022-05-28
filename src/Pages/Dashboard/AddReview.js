@@ -6,10 +6,12 @@ import { serverUrl } from "../../helper";
 import Loading from "../Shared/Loading";
 
 const AddReview = () => {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   if (loading) {
     return <Loading></Loading>;
   }
+
+
 
   const handleReview = (event) => {
     event.preventDefault();
@@ -34,9 +36,7 @@ const AddReview = () => {
   };
   return (
     <div className="mb-24 w-64 lg:w-96 mx-auto  overflow-hidden">
-      <h2 className="text-xl my-16 font-bold text-primary">
-        Welcome to your Dashboard
-      </h2>
+      <h2 className="text-xl my-6 font-bold text-primary">Add review</h2>
       <form onSubmit={handleReview} className="">
         <div className="form-control w-full">
           <label className="label">

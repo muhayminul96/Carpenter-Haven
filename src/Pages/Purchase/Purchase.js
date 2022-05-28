@@ -12,7 +12,7 @@ const Purchase = () => {
   const { id } = useParams();
   const [user, loading, error] = useAuthState(auth);
 
-  const { register, handleSubmit ,reset} = useForm();
+  const { register, handleSubmit, reset } = useForm();
   console.log(id);
   const { isLoading, data: product } = useQuery("product", () =>
     fetch(`${serverUrl}product/${id}`).then((res) => res.json())
@@ -22,53 +22,47 @@ const Purchase = () => {
   }
 
   const onSubmit = (data) => {
-      const minimumOrderQuantity = parseInt(product.minimumOrderQuantity)
-      const orderQuantity = parseInt(data.orderQuantity)
-      let quantity = parseInt(product.quantity)
-      const  totalPrice = orderQuantity * parseInt(product.price)
-      console.log(minimumOrderQuantity,orderQuantity,quantity,totalPrice)
-      if(orderQuantity >= minimumOrderQuantity ){
-          if(orderQuantity < quantity){
-
-            // save to order to database
-            data.totalPrice = totalPrice;
-            console.log(data) 
+    const minimumOrderQuantity = parseInt(product.minimumOrderQuantity);
+    const orderQuantity = parseInt(data.orderQuantity);
+    let quantity = parseInt(product.quantity);
+    const totalPrice = orderQuantity * parseInt(product.price);
+    console.log(minimumOrderQuantity, orderQuantity, quantity, totalPrice);
+    if (orderQuantity >= minimumOrderQuantity) {
+      if (orderQuantity < quantity) {
+        // save to order to database
+        data.totalPrice = totalPrice;
+        console.log(data);
 
         fetch(`${serverUrl}order`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      })
-        .then((response) => response.json())
-        .then((result) => {
-          console.log(result);
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((result) => {
+            console.log(result);
 
-        // update Quanatity 
+            // update Quanatity
 
-        quantity = quantity - orderQuantity
+            quantity = quantity - orderQuantity;
 
-        fetch(`${serverUrl}product/${id}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({quantity}),
-          })
-            .then((res) => res.json())
-            .then((data) => console.log(data));
+            fetch(`${serverUrl}product/${id}`, {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ quantity }),
+            })
+              .then((res) => res.json())
+              .then((data) => console.log(data));
 
-
-
-          reset();
-          toast("order is  placed");
-        });
-            
-          }
-          else{
-              toast.error('out of stoke')
-          }
+            reset();
+            toast("order is  placed");
+          });
+      } else {
+        toast.error("out of stoke");
       }
-      else{
-          toast.error('please order minimum quantity')
-      }
+    } else {
+      toast.error("please order minimum quantity");
+    }
   };
 
   return (

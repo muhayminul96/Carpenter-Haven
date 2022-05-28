@@ -14,6 +14,7 @@ const Contracts = () => {
             You can contract us and send opinion and you send text to us
           </p>
         </div>
+        <div class="divider hidden lg:block divider-horizontal mx-10"></div>
         <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div class="card-body">
             <div class="form-control">
