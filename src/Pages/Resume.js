@@ -65,7 +65,61 @@ const Resume = () => {
               </tbody>
             </table>
           </div>
-        </div>
+          <div>
+          <p class="py-5 mb-8 text-3xl md:text-5xl leading-relaxed">
+              My Project
+            </p>
+          <div class="overflow-x-auto">
+
+            <table class="table w-full">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Name</th>
+                  <th>Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <td>Mobile Bari</td>
+                  <td>
+                    <a
+                      target="blank"
+                      href="https://vigilant-bardeen-deeb4e.netlify.app/"
+                    >
+                      https://vigilant-bardeen-deeb4e.netlify.app/
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>2</th>
+                  <td>Cholo Ghuri</td>
+                  <td>
+                    <a target="blank" href="https://cholo-ghuri-4f174.web.app/">
+                      https://cholo-ghuri-4f174.web.app/
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <th>3</th>
+                  <td>Sports House</td>
+                  <td>
+                    <a
+                      target="blank"
+                      href="https://sports-house-185ed.web.app/"
+                    >
+                      https://sports-house-185ed.web.app/
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+          <div/>
+          </div>
       </div>
     </div>
   );
