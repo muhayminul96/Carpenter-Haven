@@ -6,7 +6,9 @@ import Loading from "../Shared/Loading";
 const Products = () => {
   const navigate = useNavigate();
   const { isLoading, data: products } = useQuery("products", () =>
-    fetch("http://localhost:5000/products").then((res) => res.json())
+    fetch("https://cryptic-hamlet-00413.herokuapp.com/products").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
@@ -47,7 +49,7 @@ const Products = () => {
                 <p className="flex font-bold justify-start">
                   Price :{" "}
                   <span className="text-xl text-primary font-extrabold mx-2">
-                    {product.price} 
+                    {product.price}
                   </span>
                   Taka
                 </p>
