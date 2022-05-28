@@ -5,21 +5,38 @@ import { serverUrl } from "../../helper";
 import Loading from "../Shared/Loading";
 
 const MyOrder = () => {
-    const [user, loading ] = useAuthState(auth);
-    const [myOrders, setMyOrders] = useState([]);
-    useEffect(() => {
-      fetch(`${serverUrl}myorders?email=${user.email}`)
+  const [user, loading] = useAuthState(auth);
+  const [myOrders, setMyOrders] = useState([]);
+  useEffect(() => {
+    fetch(`${serverUrl}myorders?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
-    }, [user]);
-    if (loading) {
-        return <Loading></Loading>;
-    }
-  
+  }, [user]);
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
+
+  const handleDelete = (id) => {
+    console.log(id);
+    fetch(`${serverUrl}order/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.deletedCount);
+        if (data.deletedCount === 1) {
+            console.log(data.deletedCount);
+ 
+          const newMyOrders = myOrders.filter((order) => order._id !== id);
+          setMyOrders(newMyOrders);
+        }
+      });
+  };
 
   return (
     <div>
-    <h1 className="text-4xl my-16 font-bold text-primary"> All Order </h1>
+      <h1 className="text-4xl my-16 font-bold text-primary"> All Order </h1>
 
       <div class="overflow-x-auto">
         <table class="table w-full">
@@ -33,34 +50,23 @@ const MyOrder = () => {
             </tr>
           </thead>
           <tbody>
-            {
-                myOrders.map((myOrder,index) => 
-                    <tr>
-              <th>{index+1}</th>
-              <td>{myOrder.productName}</td>
-              <td>{myOrder.orderQuantity}</td>
-              <td>{myOrder?.totalPrice}</td>
-              <td>Blue</td>
-            </tr>
-                    )
-            }
-            
-            
-            
-            <tr class="hover">
-              <th>2</th>
-              <td>Hart Hagerty</td>
-              <td>Desktop Support Technician</td>
-              <td>Purple</td>
-              <td>Purple</td>
-            </tr>
-            <tr>
-              <th>3</th>
-              <td>Brice Swyre</td>
-              <td>Tax Accountant</td>
-              <td>Red</td>
-              <td>Red</td>
-            </tr>
+            {myOrders.map((myOrder, index) => (
+              <tr class="hover">
+                <th>{index + 1}</th>
+                <td>{myOrder.productName}</td>
+                <td>{myOrder.orderQuantity}</td>
+                <td>{myOrder?.totalPrice}</td>
+                <td>
+                  <button class="btn btn-outline btn-primary">Pay</button>
+                  <button
+                    onClick={() => handleDelete(myOrder._id)}
+                    class="btn btn-outline btn-secondary"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
